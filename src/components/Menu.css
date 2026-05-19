@@ -1,0 +1,158 @@
+.menu-section {
+  padding: 4rem 1.5rem 8rem 1.5rem;
+  background-color: transparent;
+  max-width: 1200px;
+  margin: -10vh auto 0;
+  position: relative;
+  z-index: 20;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.menu-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+}
+
+.menu-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.menu-card.reveal-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.menu-img-placeholder {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-container {
+  position: relative;
+  width: 90%;
+  max-width: 700px;
+  height: 280px;
+  margin: 0 auto 1.5rem auto;
+  overflow: hidden;
+  border-radius: 32px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.6s ease;
+}
+
+.carousel-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 30px 70px rgba(0,0,0,0.12);
+}
+
+.carousel-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  margin-bottom: 0;
+}
+
+.carousel-img.active {
+  opacity: 1;
+}
+
+.menu-card-content {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.menu-card-title {
+  font-size: 2.25rem;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+  color: var(--primary-text);
+}
+
+.menu-badge {
+  display: inline-block;
+  background-color: var(--border-color);
+  color: var(--muted-text);
+  padding: 0.25rem 1rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.menu-card-desc {
+  color: var(--muted-text);
+  margin-bottom: 1.5rem;
+}
+
+.view-menu-btn {
+  padding: 0.5rem 1.5rem;
+}
+
+/* Menu Modal Overlay */
+.menu-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(30, 22, 16, 0.9);
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.menu-modal-overlay .close-btn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 3rem;
+  color: var(--bg-color);
+  z-index: 10;
+  transition: transform 0.3s;
+}
+
+.menu-modal-overlay .close-btn:hover {
+  transform: scale(1.1);
+}
+
+.menu-modal-content {
+  width: 100%;
+  max-width: 900px;
+  height: 600px;
+  background-color: var(--border-color);
+}
+
+@media (min-width: 768px) {
+  .menu-section {
+    padding: 6rem 3rem 12rem 3rem;
+  }
+  .section-title {
+    font-size: 3.5rem;
+    margin-bottom: 4rem;
+  }
+  .carousel-container {
+    height: 500px;
+    width: 80%;
+  }
+}

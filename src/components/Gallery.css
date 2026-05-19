@@ -1,0 +1,41 @@
+.gallery-section {
+  padding: 4rem 0;
+  background-color: var(--surface-color);
+  overflow: hidden;
+}
+
+.gallery-marquee {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.gallery-track {
+  display: flex;
+  gap: 2rem;
+  flex-shrink: 0;
+  animation: scrollMarquee 40s linear infinite;
+}
+
+/* Pause the scrolling if a user hovers to look closer at a photo */
+.gallery-marquee:hover .gallery-track {
+  animation-play-state: paused;
+}
+
+@keyframes scrollMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Translate exactly the width of the track plus the gap */
+    transform: translateX(calc(-100% - 2rem));
+  }
+}
+
+@media (min-width: 768px) {
+  .gallery-section {
+    padding: 6rem 0;
+  }
+}
